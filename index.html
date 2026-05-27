@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Helix AI Solutions — Coming soon</title>
+<meta name="description" content="Helix AI Solutions helps small and mid-sized businesses use AI to deliver real results and grow their bottom line. Site coming soon." />
+<link rel="canonical" href="https://helixaisolutions.com/" />
+
+<!-- Icons -->
+<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://helixaisolutions.com/" />
+<meta property="og:title" content="Helix AI Solutions — Coming soon" />
+<meta property="og:description" content="Helix AI Solutions helps small and mid-sized businesses use AI to deliver real results and grow their bottom line." />
+<meta property="og:image" content="https://helixaisolutions.com/assets/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Helix AI Solutions — Coming soon" />
+<meta name="twitter:description" content="Helix AI Solutions helps small and mid-sized businesses use AI to deliver real results and grow their bottom line." />
+<meta name="twitter:image" content="https://helixaisolutions.com/assets/og-image.png" />
+
+<meta name="theme-color" content="#00142C" />
+
+<!-- Fonts: Sora (display) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Sora:wght@500;600&display=swap" />
+
+<style>
+  /* Design tokens used by this page (slimmed from the Helix design system) */
+  :root {
+    --brand-navy:      #00142C;
+    --brand-navy-deep: #040516;
+    --brand-lime:      #ACF814;
+    --fg-on-dark:      #FFFFFF;
+
+    --font-display: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-body:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+    --fs-body: 16px;
+    --lh-body: 1.55;
+
+    --radius-pill: 999px;
+    --ls-eyebrow:  0.14em;
+
+    --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    min-height: 100svh;
+    background: radial-gradient(120% 80% at 50% 40%, #03224A 0%, var(--brand-navy) 55%, var(--brand-navy-deep) 100%);
+    color: var(--fg-on-dark);
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: grid;
+    place-items: center;
+    padding: clamp(24px, 6vw, 64px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 640px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(28px, 5vw, 44px);
+  }
+
+  .logo {
+    width: clamp(260px, 56vw, 460px);
+    height: auto;
+    display: block;
+    /* the inverted logo has a soft inner glow already; nothing else needed */
+  }
+
+  .tagline {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(18px, 2.4vw, 24px);
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--fg-on-dark);
+    max-width: 34ch;
+    text-wrap: balance;
+  }
+
+  .tagline strong {
+    font-weight: 600;
+    color: var(--brand-lime);
+  }
+
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px 10px 18px;
+    border: 1px solid rgba(172, 248, 20, 0.3);
+    border-radius: var(--radius-pill);
+    background: rgba(172, 248, 20, 0.06);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: clamp(-28px, -2.4vw, -16px);
+    letter-spacing: var(--ls-eyebrow);
+    text-transform: uppercase;
+    color: var(--brand-lime);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--brand-lime);
+    box-shadow: 0 0 12px rgba(172, 248, 20, 0.7);
+    animation: pulse 2.4s var(--ease-in-out) infinite;
+    flex: none;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1);   opacity: 1; }
+    50%      { transform: scale(0.6); opacity: 0.55; }
+  }
+
+  /* gentle entrance */
+  main > * { animation: rise 700ms var(--ease-out) both; }
+  main > .status  { animation-delay: 60ms; }
+  main > .logo    { animation-delay: 220ms; }
+  main > .tagline { animation-delay: 360ms; }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    main > *, .dot { animation: none !important; }
+  }
+
+  @media (max-width: 520px) {
+    .tagline { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+
+  <main>
+    <div class="status" role="status" aria-label="Coming soon">
+      <span class="dot" aria-hidden="true"></span>
+      <span>Coming soon</span>
+    </div>
+
+    <img class="logo" src="assets/logo-helix-inverse.png" alt="Helix AI Solutions" />
+
+    <p class="tagline">
+      Helix AI Solutions helps small and mid-sized businesses use AI to deliver real results and grow their bottom line.
+    </p>
+  </main>
+
+</body>
+</html>
